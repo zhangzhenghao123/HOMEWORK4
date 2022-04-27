@@ -1,0 +1,78 @@
+#include <stdio.h>
+	#include<string.h>
+	struct student
+{
+	int stuId;
+	int stuAge;
+	char stuName[100];
+	struct student *next;
+};
+
+void printfstudent(struct student *curp）
+				   {				   
+					   printf("学号:%d  年龄:%d   姓名:%s",curp->stuId,curp->stuAge,curp->stuName);
+				   }
+				   int main()
+				   {
+					   struct student a,b,c;
+					   a.stuId=2022;
+					   a.stuAge=18;
+					   stxcpy(a.stuName,"伽利略");
+
+					   b.stuId=2023;
+					   b.stuAge=19;
+					   stxcpy(b.stuName,"爱因斯坦");
+
+
+					   c.stuId=2024;
+					   c.stuAge=19;
+					   stxcpy(c.stuName,"所罗门");
+
+					   struct stident d=2022,12,"拿破仑");
+
+					   printf("a->b->c->d-NULL\n");
+					   a.next=&b;
+					   b.next=&c;
+					   c.next=&d;
+					   d.next=&NULL;
+
+
+
+					   struct student *curp=a;
+					   while(curp!=NULL)
+					   {
+						   printfstudent(curp);
+						   curp=curp->next;
+					   }
+					   
+					   printf ("输入学生学号：");
+					   int id;
+					   scanf("%d",&id);
+					   curp=&a;
+					   int flag=0;
+					   while(curp!=NULL)
+					   {
+					   if(curp->stuId==id)
+					   {
+						   printsyudent(curp);
+						   flag=1;
+						   break;
+					   }
+					   else
+					   {
+						   curp=curp->next;
+					   }
+				   }
+					   if(flag==0)
+					   {
+						   printf（"找不到该学生\n");
+					   }
+				   
+							   
+					   
+
+
+
+
+					   return 0;
+				   }
